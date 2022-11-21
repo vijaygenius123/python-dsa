@@ -11,7 +11,14 @@ class LinkedList:
         self.tail = new_node
         self.length = 1
 
+    def print_lint(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+
+
 
 if __name__ == '__main__':
     my_linked_list = LinkedList(10)
-    print(my_linked_list.head.value)
+    my_linked_list.print_lint()
