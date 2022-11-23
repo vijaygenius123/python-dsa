@@ -58,7 +58,15 @@ class LinkedList:
             new_node.next = self.head
             self.head = new_node
         self.length += 1
+        return True
 
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+        return temp.value
 
 
 if __name__ == '__main__':
@@ -67,9 +75,11 @@ if __name__ == '__main__':
     my_linked_list.append(8)
     my_linked_list.append(7)
     my_linked_list.prepend(11)
+    print(my_linked_list.get(0))
     my_linked_list.print()
     my_linked_list.pop()
     my_linked_list.pop()
+    print(my_linked_list.get(3))
     my_linked_list.print()
     my_linked_list.pop()
     my_linked_list.print()
